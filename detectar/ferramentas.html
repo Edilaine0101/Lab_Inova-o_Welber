@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Impacto das Tecnologias de Monitoramento nas Páginas Web">
+    <title>Impacto das Tecnologias de Monitoramento nas Páginas Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #2196F3; /* Cor Azul */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        article {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #2196F3;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        h1 {
+            color: #f0f8fd;
+            font-size: 1.5em;
+        }
+
+        h2 {
+            color: #000000;
+        }
+        p {
+            color: #020202;
+            line-height: 1.4;
+            font-size: 0.85em;
+        }
+        .tool-content {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #2196F3; /* Borda Azul */
+            border-radius: 8px;
+            font-size: 0.85em;
+            max-height: 200px;
+            overflow-y: auto;
+            transition: max-height 0.3s ease-out;
+        }
+        .btn {
+            padding: 8px 16px;
+            margin: 10px 0;
+            background-color: #007BFF; /* Cor Azul */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1em;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="FERRAMENTAS">
+        <header>
+            <h1>Impacto das Tecnologias de Monitoramento nas Páginas Web</h1>
+            <p>Como as ferramentas de monitoramento estão moldando a experiência online</p>
+        </header>
+
+        <article>
+            <h2>O Crescimento das Ferramentas de Monitoramento</h2>
+            <p>Nos últimos anos, as ferramentas de monitoramento se tornaram parte fundamental do desenvolvimento de páginas web. Elas ajudam os desenvolvedores e equipes de marketing a entender o comportamento do usuário, monitorar erros e otimizar o desempenho do site.</p>
+
+            <!-- Google Analytics Section -->
+            <button class="btn" onclick="toggleContent('googleAnalytics')">Google Analytics: Acompanhamento de Tráfego</button>
+            <div id="googleAnalytics" class="tool-content">
+                <p>O Google Analytics é uma das ferramentas mais populares e poderosas para monitorar o tráfego de um site. Com ele, é possível acompanhar métricas como o número de visitantes, as páginas mais visitadas, a origem do tráfego e até o tempo de permanência dos usuários nas páginas. Para os desenvolvedores e especialistas em marketing, essas informações são cruciais para entender como o conteúdo está sendo consumido e onde é possível melhorar.</p>
+            </div>
+
+            <!-- Hotjar Section -->
+            <button class="btn" onclick="toggleContent('hotjar')">Hotjar: Analisando o Comportamento dos Usuários</button>
+            <div id="hotjar" class="tool-content">
+                <p>O Hotjar é uma ferramenta que permite analisar como os usuários interagem com a página. Através de mapas de calor e gravações de sessões, é possível ver exatamente onde os usuários clicam, até onde rolam a página e onde eles geralmente saem do site. Com isso, as equipes podem melhorar a navegação e otimizar a experiência do usuário.</p>
+            </div>
+
+            <!-- Sentry Section -->
+            <button class="btn" onclick="toggleContent('sentry')">Sentry: Monitoramento de Erros em Tempo Real</button>
+            <div id="sentry" class="tool-content">
+                <p>O Sentry é uma ferramenta especializada em detectar e rastrear erros em tempo real. Com ela, é possível receber notificações sempre que uma exceção ou erro de código ocorre na página, o que permite que os desenvolvedores corrijam rapidamente falhas e evitem impactos na experiência do usuário.</p>
+            </div>
+        </article>
+
+        <footer>
+            <p>© 2025 Reportagem de Tecnologia. Todos os direitos reservados.</p>
+        </footer>
+    </section>
+
+    <script>
+        // Função para alternar a visibilidade do conteúdo
+        function toggleContent(toolId) {
+            var content = document.getElementById(toolId);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                content.style.maxHeight = content.scrollHeight + "px"; // Mostra o conteúdo com animação
+            } else {
+                content.style.maxHeight = "0"; // Esconde o conteúdo com animação
+                setTimeout(function() {
+                    content.style.display = "none";
+                }, 300); // Esconde após a animação de fechamento
+            }
+        }
+    </script>
+    
+</body>
+</html>

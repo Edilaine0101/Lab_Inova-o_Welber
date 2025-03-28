@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diretrizes do NIST - Cybersecurity Framework</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo básico */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #2196F3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Menu de navegação */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            float: left;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 14px 20px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+
+        /* Conteúdo principal */
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            display: none; /* Esconde as seções inicialmente */
+        }
+
+        h2 {
+            color: #2196F3;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .example {
+            font-style: italic;
+            color: #333;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #2196F3;
+            color: white;
+            text-align: center;
+            padding: 01px;
+        }
+
+        /* Ícones */
+        .icon {
+            font-size: 50px;
+            margin-right: 15px;
+        }
+
+        /* Estilo para imagens de diagramas */
+        .diagram {
+            max-width: 20%;
+            height: auto;
+            margin-top: 50px;
+        }
+    </style>
+    <script>
+        // Função para alternar a exibição das seções
+        function toggleSection(sectionId) {
+            // Esconde todas as seções
+            const sections = document.querySelectorAll('section');
+            sections.forEach((section) => {
+                section.style.display = "none";
+            });
+            
+            // Exibe a seção clicada
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.style.display = "block";
+            }
+        }
+
+        // Função para exibir mais informações no cabeçalho
+        function toggleHeaderInfo() {
+            var header = document.querySelector('header');
+            header.innerHTML = header.innerHTML === "Diretrizes do NIST - Cybersecurity Framework" ?
+                "<h1>Diretrizes do NIST - Cybersecurity Framework</h1><p>Aqui estão as principais diretrizes de cibersegurança segundo o NIST.</p>" :
+                "<h1>Diretrizes do NIST - Cybersecurity Framework</h1>";
+        }
+    </script>
+</head>
+<body>
+
+    <header onclick="toggleHeaderInfo()">
+        <h1>Diretrizes do NIST - Cybersecurity Framework</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0);" onclick="toggleSection('identificar')">Identificar</a></li>
+            <li><a href="javascript:void(0);" onclick="toggleSection('proteger')">Proteger</a></li>
+            <li><a href="javascript:void(0);" onclick="toggleSection('detectar')">Detectar</a></li>
+            <li><a href="javascript:void(0);" onclick="toggleSection('responder')">Responder</a></li>
+            <li><a href="javascript:void(0);" onclick="toggleSection('recuperar')">Recuperar</a></li>
+			<li><a href="javascript:void(0);" onclick="toggleSection('governar')">Governar</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="identificar">
+            <h2>Identificar</h2>
+            <p>A função "Identificar" envolve o entendimento e a gestão do risco de cibersegurança para os sistemas, ativos e operações de uma organização. Isso ajuda a garantir que todos os recursos críticos estejam identificados e protegidos adequadamente.</p>
+            <p><strong>Exemplo:</strong> Realizar um inventário completo de ativos de TI, como servidores, computadores, dispositivos móveis, redes, etc., para entender onde a proteção é necessária. Além disso, identificar os riscos envolvidos, como vulnerabilidades ou dependências externas..</p>
+            <img class="diagram" src="identificar.webp" alt="Diagrama Identificar">
+        </section>
+
+        <section id="proteger">
+            <h2>Proteger</h2>
+            <p>A função "Proteger" visa implementar controles de segurança para proteger os sistemas e dados críticos contra ameaças identificadas.</p>
+            <p><strong>Exemplo:</strong> Implementação de autenticação multifatorial (MFA), criptografia de dados sensíveis, controle de acesso baseado em funções (RBAC) e treinamento regular dos funcionários sobre práticas de segurança cibernética..</p>
+            <img class="diagram" src="proteger.webp" alt="Diagrama Proteger">
+        </section>
+
+        <section id="detectar">
+            <h2>Detectar</h2>
+            <p>A função "Detectar" envolve a implementação de atividades para identificar rapidamente a ocorrência de eventos de segurança, como ataques cibernéticos ou vulnerabilidades.</p>
+            <p><strong>Exemplo:</strong> Implementação de sistemas de monitoramento contínuo, como sistemas de detecção de intrusão (IDS), para identificar tráfego de rede anômalo ou comportamentos incomuns em sistemas. Além disso, pode incluir o uso de ferramentas de log e análise de eventos..</p>
+            <img class="diagram" src="detectar.webp" alt="Diagrama Detectar">
+        </section>
+
+        <section id="responder">
+            <h2>Responder</h2>
+            <p>A função "Responder" envolve o desenvolvimento e a implementação de estratégias para lidar com incidentes de segurança, garantindo uma resposta rápida e eficaz.</p>
+            <p><strong>Exemplo:</strong> Ter uma equipe de resposta a incidentes treinada para isolar sistemas afetados e minimizar danos após um ataque.</p>
+            <img class="diagram" src="responder.webp" alt="Diagrama Responder">
+        </section>
+
+        <section id="recuperar">
+            <h2>Recuperar</h2>
+            <p>A função "Recuperar" envolve a capacidade de restaurar rapidamente os serviços e sistemas após um incidente de segurança, minimizando o impacto e garantindo a continuidade dos negócios.</p>
+            <p><strong>Exemplo:</strong> Após um ataque cibernético bem-sucedido, a recuperação pode incluir a restauração de sistemas a partir de backups, a correção de vulnerabilidades exploradas durante o ataque e a realização de análises para entender a causa raiz do incidente. Além disso, pode incluir a atualização das políticas de segurança com base nas lições aprendidas..</p>
+            <img class="diagram" src="recuperar.webp" alt="Diagrama Recuperar">
+        </section>
+		
+		<section id="governar">
+            <h2>Governar</h2>
+            <p>A governança no NIST CSF envolve definir políticas, processos e responsabilidades para alinhar a segurança cibernética aos objetivos da organização. No CSF 2.0, a função "Governar" (Govern) reforça a importância da gestão de riscos e conformidade.</p>
+            <p><strong>Exemplo:</strong> Após um ataque cibernético, a governança envolve ações como a atualização das políticas de segurança para reforçar os controles de acesso e protocolos de resposta a incidentes. A gestão de riscos reavalia a exposição da organização a novas ameaças, enquanto a conformidade garante que todas as ações corretivas estejam alinhadas com normas como a ISO 27001 e a LGPD. O monitoramento contínuo é reforçado para detectar precocemente ameaças e garantir que medidas corretivas sejam eficazes a longo prazo.</p>
+            <img class="diagram" src="governar.webp" alt="Diagrama Governar">
+        </section>
+		
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Secure+ - Todos os direitos reservados.</p>
+        <p><a href="https://www.nist.gov/cyberframework" target="_blank" style="color: white;">Saiba mais sobre o NIST Cybersecurity Framework</a></p>
+    </footer>
+
+</body>
+</html> 

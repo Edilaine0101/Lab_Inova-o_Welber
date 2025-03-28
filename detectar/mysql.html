@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introdução ao MySQL e suas funcionalidades">
+    <title>Introdução ao MySQL</title>
+    <style>
+        body footer {
+			background-color: #2196F3;
+			color: white;
+			padding: 10px;
+			text-align: center;
+			width: 100%;
+			position: relative;
+		}
+
+        header {
+            background-color: #2196F3;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        article {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #2196F3;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .btn {
+            padding: 8px 16px;
+            margin: 10px 0;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1em;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .tool-content {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #2196F3;
+            border-radius: 8px;
+            font-size: 0.85em;
+            max-height: 200px;
+            overflow-y: auto;
+            transition: max-height 0.3s ease-out;
+        }
+        img {
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            margin: 10px auto;
+            border-radius: 8px;
+        }
+        pre {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Introdução ao MySQL</h1>
+        <p>Entenda como funciona um dos bancos de dados mais populares do mundo</p>
+    </header>
+    <article>
+        <h2>O que é o MySQL?</h2>
+        <p>O MySQL é um sistema de gerenciamento de banco de dados relacional (RDBMS) amplamente utilizado em aplicações web. Ele é conhecido por sua eficiência, escalabilidade e confiabilidade.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dd/MySQL_logo.svg/1200px-MySQL_logo.svg.png" alt="Logo do MySQL">
+        
+        <button class="btn" onclick="toggleContent('mysqlInstalacao')">Como Instalar o MySQL</button>
+        <div id="mysqlInstalacao" class="tool-content">
+            <p>A instalação do MySQL pode ser feita de várias formas. Em sistemas baseados em Linux, pode-se usar:</p>
+            <pre><code>sudo apt update
+sudo apt install mysql-server</code></pre>
+            <p>Para Windows, pode-se baixar o MySQL Installer diretamente do site oficial.</p>
+        </div>
+        
+        <button class="btn" onclick="toggleContent('mysqlConsultas')">Exemplo de Consultas SQL</button>
+        <div id="mysqlConsultas" class="tool-content">
+            <p>Abaixo está um exemplo de criação de uma tabela e inserção de dados:</p>
+            <pre><code>CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100),
+    email VARCHAR(100)
+);
+INSERT INTO usuarios (nome, email) VALUES ('João Silva', 'joao@email.com');</code></pre>
+        </div>
+    </article>
+    <footer>
+        <p>© 2025 Tutoriais de Tecnologia. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        function toggleContent(toolId) {
+            var content = document.getElementById(toolId);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = "0";
+                setTimeout(function() {
+                    content.style.display = "none";
+                }, 300);
+            }
+        }
+    </script>
+</body>
+</html>
